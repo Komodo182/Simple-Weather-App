@@ -17,11 +17,10 @@ namespace Simple_Weather_App
           PRIMARY KEY (`userid`),
           UNIQUE KEY `username_UNIQUE` (`username`));
         */
-        static string connStr = "Server=ND-COMPSCI;User ID=sly;Password=;Database=tl_sly_weather";
+        static string connStr = $"Server=ND-COMPSCI;User ID=sly;Password={Password.getPassword()};Database=tl_sly_weather";
         static User user;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
             Menu();
         }
         static void Menu()
@@ -61,6 +60,12 @@ namespace Simple_Weather_App
             if (loggedIn)
             {
                 Console.WriteLine($"getting weather in {user._location}...");
+                for (int i = 0; i < 10; i++)
+                {
+                    Thread.Sleep(500);
+                    Console.Write("#");
+                }
+                Console.WriteLine($"\nCould not get weather in {user._location}");
             }
         }
         public static void logIn(string username, string password)
