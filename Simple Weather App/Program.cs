@@ -17,7 +17,7 @@ namespace Simple_Weather_App
           PRIMARY KEY (`userid`),
           UNIQUE KEY `username_UNIQUE` (`username`));
         */
-        static string connStr = $"Server=ND-COMPSCI;User ID=sly;Password={Password.getPassword()};Database=tl_sly_weather";
+        static string connStr = $"Server=ND-COMPSCI;User ID=tl_S2301171;Password={"tl_S2301171"};Database=tl_S2301171";
         static User user;
         static void Main(string[] args)
         {
